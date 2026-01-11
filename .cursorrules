@@ -1,0 +1,96 @@
+# Cursor Rules - Customer App
+
+You are an expert React Native / TypeScript developer working on a medical clinic patient app.
+
+## Core Principles (MUST FOLLOW)
+
+### KISS - Keep It Simple
+- Write simple, readable code
+- Avoid over-engineering
+- One function = one responsibility
+- If it feels complex, simplify
+
+### SOLID
+- Single Responsibility: One class/module, one reason to change
+- Open/Closed: Extend, don't modify
+- Liskov Substitution: Subtypes replace base types
+- Interface Segregation: Small, specific interfaces
+- Dependency Inversion: Depend on abstractions
+
+### DRY - Don't Repeat Yourself
+- Extract repeated logic into reusable functions
+- Use constants for magic values
+- No copy-paste coding
+
+## Project Context
+
+This is a patient-facing medical app (Australia) with:
+- Appointment booking and management
+- Smart reminder system (SMS/Push/Email)
+- Medicare Bulk Billing integration
+- Invoice viewing and payments
+- Clinic/Doctor information
+
+## Tech Stack
+- React Native (Expo)
+- TypeScript (strict mode)
+- React Query for data fetching
+- Zustand for global state
+- React Navigation
+- Zod for validation
+
+## Code Style
+
+### Naming
+- Components: PascalCase (`AppointmentCard.tsx`)
+- Functions: camelCase (`formatDateTime()`)
+- Constants: SCREAMING_SNAKE_CASE (`MAX_APPOINTMENTS`)
+- Types: PascalCase with I/T prefix (`IUser`, `TStatus`)
+
+### Component Structure
+```typescript
+// Imports (React > External > Internal > Styles)
+// Types/Interfaces
+// Constants
+// Component
+// Styles
+```
+
+### Component Limits
+- Max 150 lines per file
+- Max 50 lines per function
+- Max 5 props (use object for more)
+- Max 3 JSX nesting levels
+
+## MUST DO
+- Full TypeScript coverage (no `any`)
+- Handle all error states
+- Handle all loading states
+- Validate user inputs
+- Use constants for strings
+- Write tests for critical paths
+
+## NEVER DO
+- Use `any` type
+- Use `// @ts-ignore`
+- Leave `console.log` in code
+- Store sensitive data in plain text
+- Commit secrets/API keys
+- Skip error handling
+
+## Security (Medical App)
+- Mask Medicare numbers (XXXX-XXXXX-X)
+- Use HTTPS only
+- Validate all inputs
+- Sanitize outputs
+- Follow Australian Privacy Act
+
+## When Writing Code
+1. Read existing code first - match patterns
+2. Keep it minimal - only what's needed
+3. Type everything - full TypeScript
+4. Handle errors - try/catch async code
+5. Think security - validate inputs
+
+## File Reference
+See `/rules/PROJECT_RULES.md` for complete guidelines.

@@ -1,0 +1,66 @@
+# Windsurf Rules - Customer App
+
+## Project: Patient Medical App (Australia)
+
+### Core Principles (MUST FOLLOW)
+
+**KISS** - Keep It Simple
+- Simple > clever
+- One function = one job
+- No over-engineering
+
+**SOLID**
+- Single Responsibility
+- Open/Closed
+- Liskov Substitution
+- Interface Segregation
+- Dependency Inversion
+
+**DRY** - Don't Repeat Yourself
+- Extract reusable code
+- Constants for magic values
+- No copy-paste
+
+### Tech Stack
+- React Native + Expo
+- TypeScript (strict)
+- React Query
+- Zustand
+- Zod validation
+
+### Naming
+- Components: PascalCase
+- Functions: camelCase
+- Constants: SCREAMING_SNAKE_CASE
+- Types: IPascalCase / TPascalCase
+
+### Limits
+- File: 150 lines max
+- Function: 50 lines max
+- Props: 5 max
+- Nesting: 3 levels max
+
+### ALWAYS
+- Full TypeScript (no any)
+- Handle errors
+- Handle loading
+- Validate inputs
+- Use constants
+- Test critical paths
+
+### NEVER
+- any type
+- @ts-ignore
+- console.log in prod
+- Plain text secrets
+- Commit API keys
+- Skip error handling
+
+### Security (Medical)
+- Mask Medicare numbers
+- HTTPS only
+- Validate inputs
+- Australian Privacy Act compliance
+
+### Reference
+Full rules: /rules/PROJECT_RULES.md

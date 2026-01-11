@@ -1,0 +1,32 @@
+# Cline Rules - Customer App
+
+## Project
+Patient mobile app for Australian medical clinic.
+React Native + Expo + TypeScript
+
+## Principles
+1. KISS - Simple over clever
+2. SOLID - Clean architecture
+3. DRY - No repetition
+
+## Rules
+- TypeScript strict, no `any`
+- Max 150 lines per file
+- Max 50 lines per function
+- Handle all errors
+- Validate all inputs
+- Test critical paths
+
+## Naming
+- Components: PascalCase
+- Functions: camelCase
+- Constants: SCREAMING_SNAKE
+- Types: IPrefix/TPrefix
+
+## Security
+- Mask Medicare numbers
+- HTTPS only
+- No secrets in code
+
+## Reference
+/rules/PROJECT_RULES.md
