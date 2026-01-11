@@ -33,13 +33,7 @@ export type AppointmentStatus = 'Pending' | 'Confirmed' | 'Completed' | 'Cancell
 
 export type ServiceType =
   | 'GP Consultation'
-  | 'Specialist Referral'
-  | 'Health Check'
-  | 'Vaccination'
-  | 'Mental Health'
-  | "Women's Health"
-  | "Men's Health"
-  | 'Skin Check'
+  | 'Skin Specialist'
 
 export interface IAppointment {
   id: string

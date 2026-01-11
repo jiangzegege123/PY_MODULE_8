@@ -1,6 +1,6 @@
 import { useNavigate } from 'react-router-dom'
 import { ChevronRight, Users } from 'lucide-react'
-import { Header, Card, Avatar, Button } from '@/components/common'
+import { Header, Card, Avatar } from '@/components/common'
 import { useBookingStore } from '@/store'
 import { mockDoctors } from '@/mocks'
 

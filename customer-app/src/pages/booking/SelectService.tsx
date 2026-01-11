@@ -30,13 +30,7 @@ export default function SelectService() {
                 <div className="w-12 h-12 bg-primary-50 rounded-xl flex items-center justify-center">
                   <span className="text-2xl">
                     {type === 'GP Consultation' && '🩺'}
-                    {type === 'Specialist Referral' && '📋'}
-                    {type === 'Health Check' && '✅'}
-                    {type === 'Vaccination' && '💉'}
-                    {type === 'Mental Health' && '🧠'}
-                    {type === "Women's Health" && '💗'}
-                    {type === "Men's Health" && '💙'}
-                    {type === 'Skin Check' && '🔍'}
+                    {type === 'Skin Specialist' && '🔍'}
                   </span>
                 </div>
                 <div className="flex-1">

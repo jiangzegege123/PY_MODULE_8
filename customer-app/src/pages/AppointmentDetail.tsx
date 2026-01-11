@@ -3,7 +3,7 @@ import { Calendar, Clock, MapPin, Phone, X } from 'lucide-react'
 import { Header, Card, Avatar, Badge, getStatusBadgeVariant, Button } from '@/components/common'
 import { useAuthStore } from '@/store'
 import { generateMockAppointments, getDoctorById, mockClinicInfo } from '@/mocks'
-import { formatDate, formatTime, getRelativeDay } from '@/utils'
+import { formatTime, getRelativeDay } from '@/utils'
 
 export default function AppointmentDetail() {
   const { id } = useParams()

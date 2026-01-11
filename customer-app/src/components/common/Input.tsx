@@ -39,8 +39,8 @@ export function Input({
             'placeholder:text-gray-400 transition-colors',
             'focus:outline-none focus:border-primary-500',
             error ? 'border-red-500' : 'border-gray-200',
-            icon && 'pl-12',
-            isPassword && 'pr-12',
+            icon ? 'pl-12' : '',
+            isPassword ? 'pr-12' : '',
             className
           )}
           {...props}

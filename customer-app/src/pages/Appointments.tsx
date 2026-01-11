@@ -1,10 +1,10 @@
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { Calendar, Clock, Plus } from 'lucide-react'
-import { Card, Avatar, Badge, getStatusBadgeVariant, EmptyState, Button } from '@/components/common'
+import { Card, Avatar, Badge, getStatusBadgeVariant, EmptyState } from '@/components/common'
 import { useAuthStore } from '@/store'
 import { generateMockAppointments, getDoctorById } from '@/mocks'
-import { formatDate, formatTime, getRelativeDay, cn } from '@/utils'
+import { formatDate, formatTime, cn } from '@/utils'
 
 type Tab = 'upcoming' | 'history'
 

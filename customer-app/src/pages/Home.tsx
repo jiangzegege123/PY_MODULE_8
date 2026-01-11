@@ -3,7 +3,7 @@ import { Plus, ChevronRight, Calendar, Clock } from 'lucide-react'
 import { Button, Card, Avatar, Badge, getStatusBadgeVariant } from '@/components/common'
 import { useAuthStore } from '@/store'
 import { generateMockAppointments, getDoctorById } from '@/mocks'
-import { formatDate, formatTime, getRelativeDay } from '@/utils'
+import { formatTime, getRelativeDay } from '@/utils'
 
 export default function Home() {
   const navigate = useNavigate()
