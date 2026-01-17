@@ -3,7 +3,6 @@ import { useParams, useNavigate } from 'react-router-dom'
 import { useMessageStore } from '@/store/messageStore'
 import { Header, Card, Button } from '@/components/common'
 import { 
-  ArrowLeft, 
   CalendarDays, 
   Receipt, 
   Bell, 
@@ -33,8 +32,7 @@ export default function MessageDetail() {
       <div className="min-h-screen bg-gray-50">
         <Header 
           title="Message"
-          leftIcon={ArrowLeft}
-          onLeftClick={() => navigate('/messages')}
+          showBack={true}
         />
         <div className="p-4">
           <Card>
@@ -139,8 +137,7 @@ export default function MessageDetail() {
     <div className="min-h-screen bg-gray-50 pb-20">
       <Header 
         title="Message Details"
-        leftIcon={ArrowLeft}
-        onLeftClick={() => navigate('/messages')}
+        showBack={true}
       />
 
       <div className="p-4 space-y-4">

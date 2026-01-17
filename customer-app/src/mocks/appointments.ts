@@ -90,6 +90,8 @@ export const generateTimeSlots = (_date: string, _doctorId: string): ITimeSlot[]
 
       slots.push({
         id: `${_date}-${startTime}`,
+        doctorId: _doctorId,
+        date: _date,
         startTime,
         endTime,
         isAvailable: !unavailableSlots.has(startTime),

@@ -1,10 +1,8 @@
 import { useEffect, useState } from 'react'
-import { useNavigate } from 'react-router-dom'
 import { useMessageStore } from '@/store/messageStore'
 import { MessageList } from '@/components/messages'
 import { Header, Loading } from '@/components/common'
 import { 
-  ArrowLeft, 
   Filter, 
   CheckCheck,
   CalendarDays,
@@ -26,7 +24,6 @@ const filterOptions: { value: MessageType | 'all'; label: string; icon: any }[] 
 ]
 
 export default function Messages() {
-  const navigate = useNavigate()
   const { 
     messages, 
     isLoading, 
@@ -58,8 +55,7 @@ export default function Messages() {
       <div className="min-h-screen bg-gray-50">
         <Header 
           title="Messages"
-          leftIcon={ArrowLeft}
-          onLeftClick={() => navigate(-1)}
+          showBack={true}
         />
         <Loading />
       </div>
@@ -70,10 +66,17 @@ export default function Messages() {
     <div className="min-h-screen bg-gray-50 pb-20">
       <Header 
         title="Messages"
-        leftIcon={ArrowLeft}
-        onLeftClick={() => navigate(-1)}
-        rightIcon={unreadCount > 0 ? CheckCheck : undefined}
-        onRightClick={unreadCount > 0 ? handleMarkAllAsRead : undefined}
+        showBack={true}
+        rightAction={
+          unreadCount > 0 ? (
+            <button
+              onClick={handleMarkAllAsRead}
+              className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white/10 active:bg-white/20 transition-colors"
+            >
+              <CheckCheck className="w-6 h-6 text-white" />
+            </button>
+          ) : undefined
+        }
       />
 
       <div className="p-4">

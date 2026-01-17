@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { persist } from 'zustand/middleware'
 import type { IMessage, MessageType, MessageStatus } from '@/types'
-import { mockMessages } from '@/mocks/messages'
+import { mockMessages } from '@/mocks'
 
 interface MessageState {
   messages: IMessage[]
@@ -36,7 +36,7 @@ export const useMessageStore = create<MessageState>()(
         try {
           // In production, this would be an API call
           const messages = mockMessages
-          const unreadCount = messages.filter((m) => m.status === 'unread').length
+          const unreadCount = messages.filter((m: IMessage) => m.status === 'unread').length
 
           set({ 
             messages, 

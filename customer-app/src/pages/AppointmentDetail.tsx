@@ -23,7 +23,7 @@ export default function AppointmentDetail() {
     )
   }
 
-  const canCancel = appointment.status === 'Confirmed' || appointment.status === 'Pending'
+  const canCancel = appointment.status === 'Confirmed'
 
   const handleCancel = () => {
     // In a real app, this would call an API

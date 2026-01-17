@@ -10,7 +10,7 @@ import { useEffect } from 'react'
 export default function Home() {
   const navigate = useNavigate()
   const user = useAuthStore((state) => state.user)
-  const { unreadCount, fetchMessages, getUnreadMessages } = useMessageStore()
+  const { unreadCount, fetchMessages } = useMessageStore()
 
   useEffect(() => {
     fetchMessages()
@@ -20,8 +20,6 @@ export default function Home() {
   const upcomingAppointments = appointments
     .filter((a) => a.status === 'Confirmed')
     .slice(0, 2)
-
-  const unreadMessages = getUnreadMessages().slice(0, 3)
 
   return (
     <div className="pb-4">

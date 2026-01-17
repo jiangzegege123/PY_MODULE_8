@@ -29,7 +29,7 @@ export default function MessageList({
       <EmptyState
         icon={Inbox}
         title="No Messages"
-        description={
+        message={
           filterType
             ? `You don't have any ${filterType} messages`
             : "You're all caught up! No messages to display."
