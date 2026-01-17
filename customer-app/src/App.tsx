@@ -12,6 +12,8 @@ import Appointments from '@pages/Appointments'
 import AppointmentDetail from '@pages/AppointmentDetail'
 import Clinic from '@pages/Clinic'
 import Profile from '@pages/Profile'
+import Messages from '@pages/Messages'
+import MessageDetail from '@pages/MessageDetail'
 
 // Booking Flow
 import SelectService from '@pages/booking/SelectService'
@@ -52,12 +54,14 @@ export default function App() {
         <Route element={<PrivateRoute><MainLayout /></PrivateRoute>}>
           <Route path="/" element={<Home />} />
           <Route path="/appointments" element={<Appointments />} />
+          <Route path="/messages" element={<Messages />} />
           <Route path="/clinic" element={<Clinic />} />
           <Route path="/profile" element={<Profile />} />
         </Route>
 
         {/* Protected Routes without Tab Layout */}
         <Route path="/appointment/:id" element={<PrivateRoute><AppointmentDetail /></PrivateRoute>} />
+        <Route path="/messages/:id" element={<PrivateRoute><MessageDetail /></PrivateRoute>} />
         <Route path="/doctor/:id" element={<PrivateRoute><DoctorProfile /></PrivateRoute>} />
         <Route path="/invoices" element={<PrivateRoute><Invoices /></PrivateRoute>} />
 

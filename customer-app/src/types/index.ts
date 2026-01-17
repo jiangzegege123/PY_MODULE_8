@@ -99,3 +99,29 @@ export interface IInvoiceItem {
   amount: number
   medicareRebate: number
 }
+
+// Message Types
+export type MessageType = 'appointment' | 'billing' | 'reminder' | 'system' | 'promotion'
+export type MessageStatus = 'unread' | 'read' | 'archived'
+
+export interface IMessage {
+  id: string
+  userId: string
+  type: MessageType
+  title: string
+  content: string
+  status: MessageStatus
+  createdAt: string
+  readAt?: string
+  relatedId?: string // 关联的预约ID或发票ID等
+  metadata?: {
+    appointmentId?: string
+    appointmentDate?: string
+    appointmentTime?: string
+    doctorName?: string
+    invoiceId?: string
+    invoiceAmount?: number
+    actionUrl?: string
+    actionLabel?: string
+  }
+}

@@ -1,18 +1,27 @@
 import { useNavigate } from 'react-router-dom'
-import { Plus, ChevronRight, Calendar, Clock } from 'lucide-react'
+import { Plus, ChevronRight, Calendar, Clock, MessageSquare } from 'lucide-react'
 import { Button, Card, Avatar, Badge, getStatusBadgeVariant } from '@/components/common'
 import { useAuthStore } from '@/store'
+import { useMessageStore } from '@/store/messageStore'
 import { generateMockAppointments, getDoctorById } from '@/mocks'
 import { formatTime, getRelativeDay } from '@/utils'
+import { useEffect } from 'react'
 
 export default function Home() {
   const navigate = useNavigate()
   const user = useAuthStore((state) => state.user)
+  const { unreadCount, fetchMessages, getUnreadMessages } = useMessageStore()
+
+  useEffect(() => {
+    fetchMessages()
+  }, [fetchMessages])
 
   const appointments = user ? generateMockAppointments(user.id) : []
   const upcomingAppointments = appointments
     .filter((a) => a.status === 'Confirmed')
     .slice(0, 2)
+
+  const unreadMessages = getUnreadMessages().slice(0, 3)
 
   return (
     <div className="pb-4">
@@ -108,6 +117,17 @@ export default function Home() {
       <div className="px-6 mt-6">
         <h2 className="text-lg font-semibold text-gray-800 mb-4">Quick Actions</h2>
         <div className="grid grid-cols-2 gap-4">
+          <Card onClick={() => navigate('/messages')} className="text-center relative">
+            <div className="w-12 h-12 mx-auto bg-blue-50 rounded-full flex items-center justify-center mb-2">
+              <MessageSquare className="w-6 h-6 text-blue-600" />
+            </div>
+            <p className="font-medium text-gray-800">Messages</p>
+            {unreadCount > 0 && (
+              <span className="absolute top-2 right-2 bg-red-500 text-white text-xs font-bold rounded-full min-w-[20px] h-5 flex items-center justify-center px-1.5">
+                {unreadCount > 99 ? '99+' : unreadCount}
+              </span>
+            )}
+          </Card>
           <Card onClick={() => navigate('/clinic')} className="text-center">
             <div className="w-12 h-12 mx-auto bg-primary-50 rounded-full flex items-center justify-center mb-2">
               <span className="text-2xl">🏥</span>
