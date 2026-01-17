@@ -27,7 +27,7 @@ export const generateMockAppointments = (userId: string): IAppointment[] => {
       appointmentDate: format(addDays(today, 7), 'yyyy-MM-dd'),
       startTime: '14:30',
       endTime: '15:00',
-      status: 'Pending',
+      status: 'Confirmed',
       reason: 'Follow-up consultation',
       isFirstVisit: false,
       createdAt: format(addDays(today, -2), "yyyy-MM-dd'T'HH:mm:ss"),

@@ -28,8 +28,6 @@ export function getStatusBadgeVariant(status: AppointmentStatus): BadgeVariant {
   switch (status) {
     case 'Confirmed':
       return 'success'
-    case 'Pending':
-      return 'warning'
     case 'Completed':
       return 'info'
     case 'Cancelled':

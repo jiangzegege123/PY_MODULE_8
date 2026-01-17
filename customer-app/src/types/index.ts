@@ -29,7 +29,7 @@ export interface INotificationPreferences {
 }
 
 // Appointment Types
-export type AppointmentStatus = 'Pending' | 'Confirmed' | 'Completed' | 'Cancelled' | 'NoShow'
+export type AppointmentStatus = 'Confirmed' | 'Completed' | 'Cancelled' | 'NoShow'
 
 export type ServiceType =
   | 'GP Consultation'
@@ -53,9 +53,12 @@ export interface IAppointment {
 
 export interface ITimeSlot {
   id: string
-  startTime: string
-  endTime: string
-  isAvailable: boolean
+  doctorId: string        // 医生ID（外键）
+  date: string            // 日期 (YYYY-MM-DD)
+  startTime: string       // 开始时间 (HH:mm)
+  endTime: string         // 结束时间 (HH:mm)
+  isAvailable: boolean    // 是否可用
+  appointmentId?: string  // 预约ID（如果已被预约）
 }
 
 // Doctor Types

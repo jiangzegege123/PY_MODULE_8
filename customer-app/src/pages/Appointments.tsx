@@ -16,7 +16,7 @@ export default function Appointments() {
   const appointments = user ? generateMockAppointments(user.id) : []
 
   const upcomingAppointments = appointments.filter(
-    (a) => a.status === 'Confirmed' || a.status === 'Pending'
+    (a) => a.status === 'Confirmed'
   )
   const historyAppointments = appointments.filter(
     (a) => a.status === 'Completed' || a.status === 'Cancelled' || a.status === 'NoShow'

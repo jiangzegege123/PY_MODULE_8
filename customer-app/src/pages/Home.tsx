@@ -11,7 +11,7 @@ export default function Home() {
 
   const appointments = user ? generateMockAppointments(user.id) : []
   const upcomingAppointments = appointments
-    .filter((a) => a.status === 'Confirmed' || a.status === 'Pending')
+    .filter((a) => a.status === 'Confirmed')
     .slice(0, 2)
 
   return (
